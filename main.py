@@ -19,11 +19,14 @@ BIO = (
     "zero approvals, and I still expect us to merge by Friday."
 )
 
+# Output file name inside the output directory.
+ENTRY_FILENAME = "entry.txt"
+
 
 def write_bio(output_dir: Path) -> Path:
     """Write the bio to ``entry.txt`` inside ``output_dir`` and return the path."""
     output_dir.mkdir(parents=True, exist_ok=True)
-    entry_path = output_dir / "entry.txt"
+    entry_path = output_dir / ENTRY_FILENAME
     entry_path.write_text(BIO + "\n", encoding="utf-8")
     return entry_path
 
